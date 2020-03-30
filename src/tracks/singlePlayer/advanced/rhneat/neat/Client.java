@@ -58,9 +58,9 @@ public class Client {
     }
     public void setScore(double score) {
         numEvals++;
-        this.score = this.score + (1.0/numEvals) * (score - this.score); //running average
+//        this.score = this.score + (1.0/numEvals) * (score - this.score); //running average
 //        this.score = this.score + LEARNING_RATE * (score - this.score); //learning rate
-//        this.score = score;
+        this.score = score;
     }
 
     public Species getSpecies() {

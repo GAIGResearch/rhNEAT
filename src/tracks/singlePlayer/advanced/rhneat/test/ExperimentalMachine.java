@@ -1,6 +1,5 @@
 package tracks.singlePlayer.advanced.rhneat.test;
 
-import RHEA.utils.ParameterSet;
 import core.ArcadeMachine;
 import core.competition.CompetitionParameters;
 import core.game.ExperimentalGame;
@@ -11,6 +10,7 @@ import core.vgdl.VGDLParser;
 import core.vgdl.VGDLRegistry;
 import ontology.Types;
 import tools.ElapsedCpuTimer;
+import tracks.singlePlayer.advanced.sampleMCTS.ParameterSet;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -65,14 +65,6 @@ public class ExperimentalMachine {
 			mctsParms.individual_length = 15;
 			mctsParms.fm_budget = 1000;
 			player = new tracks.singlePlayer.advanced.sampleMCTS.Agent(toPlay.getObservation(), ect, mctsParms);
-		}else if (playerId == RHEA)
-		{
-			ParameterSet rheaParms = new ParameterSet();
-			rheaParms.individual_length = 15;
-			rheaParms.fm_budget = 1000;
-			rheaParms.population_size = 10;
-			rheaParms.offspring_count = rheaParms.population_size;
-			player = new RHEA.Agent(toPlay.getObservation(), ect, rheaParms);
 		} else return null;
 
 		player.setPlayerID(0);

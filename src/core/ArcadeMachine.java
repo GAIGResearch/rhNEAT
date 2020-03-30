@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Random;
 
-import RHEA.utils.ParameterSet;
 import core.competition.CompetitionParameters;
 import core.game.Game;
 import core.game.GameDescription;
@@ -27,6 +26,7 @@ import ontology.Types;
 import tools.ElapsedCpuTimer;
 import tools.IO;
 import tools.StatSummary;
+import tracks.singlePlayer.advanced.sampleMCTS.ParameterSet;
 
 import javax.swing.*;
 

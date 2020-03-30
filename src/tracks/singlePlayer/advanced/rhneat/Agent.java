@@ -225,7 +225,7 @@ public class Agent extends AbstractPlayer{
                 }
 
                 final_state_h = heuristic.evaluateState(st);
-                n += final_state_h;
+//                n += final_state_h;
 //                n += final_state_h * Math.pow(GAMMA, i);
 
                 if(stop)
