@@ -6,4 +6,4 @@ result plots: results_cog_2020/plots/
 raw results: results_cog_2020/data/
 
 
-Thank you for visiting!
+Thank you for visiting! :)
