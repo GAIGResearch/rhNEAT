@@ -1,0 +1,110 @@
+BasicGame key_handler=Pulse no_players=2
+    SpriteSet
+        floor > Immovable img=oryx/floor3 hidden=True
+
+        code > Immovable
+            redcodeA > img=oryx/slime3
+            greencodeA > img=oryx/slime2
+            bluecodeA > img=oryx/slime1
+
+        blocks > Immovable shrinkfactor=0.7
+            redA > img=oryx/slime3
+                red >
+                    red1A >
+                    red1 >
+                redd >
+                    red2A >
+                    red2 >
+                reddd>
+                    red3A >
+                    red3 >
+            greenA > img=oryx/slime2
+                green >
+                    green1A >
+                    green1 >
+                greenn >
+                    green2A >
+                    green2 >
+                greennn >
+                    green3A >
+                    green3 >
+            blueA > img=oryx/slime1
+                blue >
+                    blue1A >
+                    blue1 >
+                bluee >
+                    blue2A >
+                    blue2 >
+                blueee >
+                    blue3A >
+                    blue3 >
+
+        wrong > Immovable hidden=True invisible=True
+            wrongA >
+            wrongB >
+        correct > Immovable hidden=True invisible=True
+            correctA >
+            correctB >
+
+        avatar > FlakAvatar orientation=UP stype=bullet img=oryx/archer1
+            avatarA >
+            avatarB >
+
+        bullet > Missile img=oryx/orb1 orientation=UP shrinkfactor=0.5 singleton=True
+
+        wall > Immovable img=oryx/wall3 autotiling=True
+
+    LevelMapping
+        . > floor
+        A > floor avatarA
+        B > floor avatarB
+        r > floor redcodeA
+        g > floor greencodeA
+        b > floor bluecodeA
+        1 > floor red1
+        2 > floor red2
+        3 > floor red3
+        4 > floor green1
+        5 > floor green2
+        6 > floor green3
+        7 > floor blue1
+        8 > floor blue2
+        9 > floor blue3
+
+    InteractionSet
+
+        avatar wall > stepBack
+        bullet wall > killSprite
+
+        redcodeA bullet > transformIfCount stype=red1A stypeCount=code geq=3 scoreChange=1
+        redcodeA bullet > transformIfCount stype=red2A stypeCount=code geq=2 scoreChange=1
+        redcodeA bullet > transformIfCount stype=red3A stypeCount=code geq=1 scoreChange=1
+
+        bluecodeA bullet > transformIfCount stype=blue1A stypeCount=code geq=3 scoreChange=1
+        bluecodeA bullet > transformIfCount stype=blue2A stypeCount=code geq=2 scoreChange=1
+        bluecodeA bullet > transformIfCount stype=blue3A stypeCount=code geq=1 scoreChange=1
+
+        greencodeA bullet > transformIfCount stype=green1A stypeCount=code geq=3 scoreChange=1
+        greencodeA bullet > transformIfCount stype=green2A stypeCount=code geq=2 scoreChange=1
+        greencodeA bullet > transformIfCount stype=green3A stypeCount=code geq=1 scoreChange=1
+
+        red3A bullet > spawnIfCounterSubTypes stype=correctA estype=wrongA stypeCount=blocks limit=6 subTypesNum=3
+        blue3A bullet > spawnIfCounterSubTypes stype=correctA estype=wrongA stypeCount=blocks limit=6 subTypesNum=3
+        green3A bullet > spawnIfCounterSubTypes stype=correctA estype=wrongA stypeCount=blocks limit=6 subTypesNum=3
+
+        #reset and continue
+        bullet correctA > transformToAll stype=red1A stypeTo=redcodeA killSecond=True
+        bullet correctA > transformToAll stype=red2A stypeTo=redcodeA killSecond=True
+        bullet correctA > transformToAll stype=red3A stypeTo=redcodeA killSecond=True
+        bullet correctA > transformToAll stype=blue1A stypeTo=bluecodeA killSecond=True
+        bullet correctA > transformToAll stype=blue2A stypeTo=bluecodeA killSecond=True
+        bullet correctA > transformToAll stype=blue3A stypeTo=bluecodeA killSecond=True
+        bullet correctA > transformToAll stype=green1A stypeTo=greencodeA killSecond=True
+        bullet correctA > transformToAll stype=green2A stypeTo=greencodeA killSecond=True
+        bullet correctA > transformToAll stype=green3A stypeTo=greencodeA killSecond=True
+
+
+    TerminationSet
+        SpriteCounterMore stype=wrongA limit=1 win=False
+        #MultiSpriteCounterSubTypes stype1=blocks limit=6 subTypesNum=3 win=True
+        Timeout limit=1500 win=False

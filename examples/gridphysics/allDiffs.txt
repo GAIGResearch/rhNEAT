@@ -1,0 +1,1127 @@
+diff --git a/examples/gridphysics/angelsdemons.txt b/examples/gridphysics/angelsdemons.txt
+index f8c14a9..db10e49 100644
+--- a/examples/gridphysics/angelsdemons.txt
++++ b/examples/gridphysics/angelsdemons.txt
+@@ -49,8 +49,8 @@ BasicGame
+         a > angel
+         t > trunk
+         x > box
+-        I > input
+-        O > output
++        i > input
++        o > output
+ 
+     TerminationSet
+         Timeout limit=1000 win=True
+diff --git a/examples/gridphysics/assemblyline.txt b/examples/gridphysics/assemblyline.txt
+index 6540949..bea5ff9 100644
+--- a/examples/gridphysics/assemblyline.txt
++++ b/examples/gridphysics/assemblyline.txt
+@@ -43,14 +43,13 @@ BasicGame key_handler=Pulse
+ 
+     LevelMapping
+         A > avatar
+-        L > lcleft
+-        R > lcright
+-        U > lcup
+-        D > lcdown
+-        G > goal
+-        P > portal
+-        B > vortex
+-        G > goal
++        l > lcleft
++        r > lcright
++        u > lcup
++        d > lcdown
++        g > goal
++        p > portal
++        v > vortex
+ 
+         1 > assembly1 linedown
+         2 > assembly2 lineright
+diff --git a/examples/gridphysics/avoidgeorge.txt b/examples/gridphysics/avoidgeorge.txt
+index 6f2312b..b302e9a 100644
+--- a/examples/gridphysics/avoidgeorge.txt
++++ b/examples/gridphysics/avoidgeorge.txt
+@@ -25,6 +25,6 @@ BasicGame
+ 
+ 
+     LevelMapping
+-        G > george
++        g > george
+         c > quiet
+         A > avatar
+\ No newline at end of file
+diff --git a/examples/gridphysics/bait.txt b/examples/gridphysics/bait.txt
+index 16d48d0..43956a8 100644
+--- a/examples/gridphysics/bait.txt
++++ b/examples/gridphysics/bait.txt
+@@ -15,9 +15,9 @@ BasicGame  key_handler=Pulse square_size=50
+     LevelMapping
+         0 > hole
+         1 > box
+-        K > key
+-        G > goal
+-        M > mushroom
++        k > key
++        g > goal
++        m > mushroom
+ 
+     InteractionSet
+         avatar wall > stepBack
+diff --git a/examples/gridphysics/blacksmoke.txt b/examples/gridphysics/blacksmoke.txt
+index 176a053..79e93d0 100644
+--- a/examples/gridphysics/blacksmoke.txt
++++ b/examples/gridphysics/blacksmoke.txt
+@@ -43,7 +43,7 @@ BasicGame
+         A > avatar ground death
+         k > key ground death
+         l > lock ground death
+-        B > box ground death
++        b > box ground death
+ 
+     TerminationSet
+         SpriteCounter stype=exit win=True
+diff --git a/examples/gridphysics/boloadventures.txt b/examples/gridphysics/boloadventures.txt
+index e1c0dce..675822f 100644
+--- a/examples/gridphysics/boloadventures.txt
++++ b/examples/gridphysics/boloadventures.txt
+@@ -20,14 +20,14 @@ BasicGame key_handler=Pulse
+ 
+     LevelMapping
+         A > avatar
+-        B > box
+-        C > boulder
+-        L > lcleft
+-        R > lcright
+-        U > lcup
+-        D > lcdown
++        b > box
++        c > boulder
++        l > lcleft
++        r > lcright
++        u > lcup
++        d > lcdown
+         0 > hole
+-        G > goal
++        g > goal
+ 
+     InteractionSet
+ 
+diff --git a/examples/gridphysics/bomber.txt b/examples/gridphysics/bomber.txt
+index 5eab19e..33a2e79 100644
+--- a/examples/gridphysics/bomber.txt
++++ b/examples/gridphysics/bomber.txt
+@@ -30,8 +30,8 @@ BasicGame key_handler=Pulse
+ 
+ 
+     LevelMapping
+-        G > goal
+-        B > box ground
++        g > goal
++        e > box ground
+         b > bomb
+         , > ground
+         . > water
+diff --git a/examples/gridphysics/boulderchase.txt b/examples/gridphysics/boulderchase.txt
+index e584d91..889ae08 100644
+--- a/examples/gridphysics/boulderchase.txt
++++ b/examples/gridphysics/boulderchase.txt
+@@ -13,7 +13,7 @@ BasicGame
+ 
+ 	LevelMapping
+ 		. > dirt
+-		E > exitdoor
++		e > exitdoor
+ 		o > boulder
+ 		x > diamond
+ 		c > crab
+diff --git a/examples/gridphysics/boulderdash.txt b/examples/gridphysics/boulderdash.txt
+index 45f4678..14d5878 100644
+--- a/examples/gridphysics/boulderdash.txt
++++ b/examples/gridphysics/boulderdash.txt
+@@ -13,7 +13,7 @@ BasicGame
+ 
+ 	LevelMapping
+ 		. > dirt
+-		E > exitdoor
++		e > exitdoor
+ 		o > boulder
+ 		x > diamond
+ 		c > crab
+diff --git a/examples/gridphysics/brainman.txt b/examples/gridphysics/brainman.txt
+index 9611d36..3baa86f 100644
+--- a/examples/gridphysics/brainman.txt
++++ b/examples/gridphysics/brainman.txt
+@@ -14,9 +14,9 @@ BasicGame
+         boulder > Passive img=boulder 
+     LevelMapping
+         A > avatar
+-        K > key
+-        D > door
+-        E > exit
++        k > key
++        d > door
++        e > exit
+         g > green
+         r > red
+         b > blue 
+diff --git a/examples/gridphysics/camelRace.txt b/examples/gridphysics/camelRace.txt
+index 2884a0b..f63c8c8 100644
+--- a/examples/gridphysics/camelRace.txt
++++ b/examples/gridphysics/camelRace.txt
+@@ -23,11 +23,11 @@ BasicGame
+         camel wall  > stepBack
+ 
+     LevelMapping
+-        G > goal
+-        R > randomCamel
+-        F > fastR
+-        M > mediumR
+-        S > slowR
++        g > goal
++        r > randomCamel
++        h > fastR
++        n > mediumR
++        t > slowR
+         f > fastL
+         m > mediumL
+         s > slowL
+diff --git a/examples/gridphysics/catapults.txt b/examples/gridphysics/catapults.txt
+index 111eb41..4eff3e0 100644
+--- a/examples/gridphysics/catapults.txt
++++ b/examples/gridphysics/catapults.txt
+@@ -20,7 +20,7 @@ BasicGame square_size=30
+         1 > southfacing
+         2 > northfacing
+         3 > westfacing
+-        G > goal
++        g > goal
+         A > moving
+     InteractionSet
+ 
+diff --git a/examples/gridphysics/chainreaction.txt b/examples/gridphysics/chainreaction.txt
+index 26288e9..24bb1ce 100644
+--- a/examples/gridphysics/chainreaction.txt
++++ b/examples/gridphysics/chainreaction.txt
+@@ -17,11 +17,11 @@ BasicGame
+ 
+     LevelMapping
+         A > avatar
+-        B > box
+-        C > normalBoulder
+-        M > masterBoulder
++        b > box
++        c > normalBoulder
++        m > masterBoulder
+         0 > hole
+-        G > goal
++        g > goal
+ 
+ 
+     InteractionSet
+diff --git a/examples/gridphysics/chipschallenge.txt b/examples/gridphysics/chipschallenge.txt
+index 823298b..d6e0478 100644
+--- a/examples/gridphysics/chipschallenge.txt
++++ b/examples/gridphysics/chipschallenge.txt
+@@ -41,16 +41,18 @@ BasicGame square_size=45 key_handler=Pulse
+         g > greenkey
+         b > bluekey
+         y > yellowkey
+-        R > reddoor
+-        G > greendoor
+-        B > bluedoor
+-        Y > yellowdoor
++
++        1 > reddoor
++        2 > greendoor
++        3 > bluedoor
++        4 > yellowdoor
++
+         - > gate
+         c > chip
+-        E > exit
++        e > exit
+         f > flippers
+         i > fireboots
+-        C > crate
++        d > crate
+ 
+ 
+     TerminationSet
+diff --git a/examples/gridphysics/chopper.txt b/examples/gridphysics/chopper.txt
+index 95dab78..c4f6e17 100644
+--- a/examples/gridphysics/chopper.txt
++++ b/examples/gridphysics/chopper.txt
+@@ -26,17 +26,17 @@ BasicGame
+         bullet > Resource limit=20
+     
+     LevelMapping
+-        S > satellite thermosphere
++        A > avatar stratosphere
++        c > satellite thermosphere
+         b > portalBase troposphere
+         a > portalAmmo
+         t > thermosphere
+         s > stratosphere
+         p > troposphere
+-        A > avatar stratosphere
+         l > leftCloud stratosphere
+-        L > fastLeftCloud stratosphere
++        d > fastLeftCloud stratosphere
+         r > rightCloud stratosphere
+-        R > fastRightCloud stratosphere
++        e > fastRightCloud stratosphere
+ 
+     TerminationSet
+         SpriteCounter      stype=avatar               limit=0 win=False
+diff --git a/examples/gridphysics/colourescape.txt b/examples/gridphysics/colourescape.txt
+index cede5dd..13a5cd1 100644
+--- a/examples/gridphysics/colourescape.txt
++++ b/examples/gridphysics/colourescape.txt
+@@ -23,7 +23,7 @@ BasicGame
+ 
+     LevelMapping
+             A > normalAvatar
+-            X > exit
++            x > exit
+             h > hole
+ 
+             1 > box
+diff --git a/examples/gridphysics/cops.txt b/examples/gridphysics/cops.txt
+index fd9b4eb..19241b2 100644
+--- a/examples/gridphysics/cops.txt
++++ b/examples/gridphysics/cops.txt
+@@ -25,12 +25,12 @@ BasicGame square_size=30
+     LevelMapping
+         0 > jail
+         1 > depot
+-        D > jaildoor
++        d > jaildoor
+ 
+         g > greenthug
+         y > yellowthug
+         r > redthug
+-        B > boss
++        b > boss
+ 
+         
+     InteractionSet
+diff --git a/examples/gridphysics/crossfire.txt b/examples/gridphysics/crossfire.txt
+index e120f3e..e730f1c 100644
+--- a/examples/gridphysics/crossfire.txt
++++ b/examples/gridphysics/crossfire.txt
+@@ -15,8 +15,8 @@ BasicGame
+ 
+ 
+     LevelMapping
+-        G > goal
+-        T > turret
++        g > goal
++        t > turret
+ 
+     TerminationSet
+         SpriteCounter stype=goal limit=0 win=True
+diff --git a/examples/gridphysics/digdug.txt b/examples/gridphysics/digdug.txt
+index 0a73c81..dfd0bde 100644
+--- a/examples/gridphysics/digdug.txt
++++ b/examples/gridphysics/digdug.txt
+@@ -16,8 +16,8 @@ BasicGame square_size=30
+     LevelMapping
+         0 > gem
+         1 > gold
+-        E > entrance
+-        M > monster
++        e > entrance
++        m > monster
+ 
+     TerminationSet
+         SpriteCounter  stype=avatar  limit=0 win=False
+diff --git a/examples/gridphysics/dungeon.txt b/examples/gridphysics/dungeon.txt
+index 2fd1111..be5bcf7 100644
+--- a/examples/gridphysics/dungeon.txt
++++ b/examples/gridphysics/dungeon.txt
+@@ -40,16 +40,16 @@ BasicGame square_size=30
+             lleft > orientation=LEFT
+ 
+     LevelMapping
+-        X > exit
++        x > exit
+         g > gold
+         A > avatar
+         k > key
+-        L > lock
++        m > lock
+ 
+-        F > firehole
++        f > firehole
+         1 > boulderRighthole
+         2 > boulderLefthole
+-        G > groundTrapHole
++        t > groundTrapHole
+ 
+         l > lcleft
+         r > lcright
+diff --git a/examples/gridphysics/enemycitadel.txt b/examples/gridphysics/enemycitadel.txt
+index 9251b5d..9e9dcc6 100644
+--- a/examples/gridphysics/enemycitadel.txt
++++ b/examples/gridphysics/enemycitadel.txt
+@@ -13,11 +13,11 @@ BasicGame square_size=40 key_handler=Pulse
+     LevelMapping
+         0 > roundhole
+         1 > squarehole
+-        B > boulder
+-        C > crate
+-        G > goal
++        b > boulder
++        c > crate
++        g > goal
+         A > avatar
+-        E > enemy
++        e > enemy
+ 
+     InteractionSet
+ 
+diff --git a/examples/gridphysics/escape.txt b/examples/gridphysics/escape.txt
+index 4f791df..2ef99b0 100644
+--- a/examples/gridphysics/escape.txt
++++ b/examples/gridphysics/escape.txt
+@@ -6,7 +6,7 @@ BasicGame key_handler=Pulse
+         hole   > Immovable color=DARKBLUE img=hole portal=True
+ 
+     LevelMapping
+-        X > exit
++        x > exit
+         h > hole
+         1 > box
+ 
+diff --git a/examples/gridphysics/factorymanager.txt b/examples/gridphysics/factorymanager.txt
+index 88bfd47..9ac8114 100644
+--- a/examples/gridphysics/factorymanager.txt
++++ b/examples/gridphysics/factorymanager.txt
+@@ -28,15 +28,15 @@ BasicGame
+ 
+     LevelMapping
+         A > avatar
+-        L > lcleft
+-        R > lcright
+-        U > lcup
+-        D > lcdown
+-        P > portal
+-        B > box
+-        H > highway
+-        S > street
+-        T > trap
++        l > lcleft
++        r > lcright
++        u > lcup
++        d > lcdown
++        p > portal
++        b > box
++        h > highway
++        s > street
++        t > trap
+ 
+     InteractionSet
+     
+diff --git a/examples/gridphysics/firecaster.txt b/examples/gridphysics/firecaster.txt
+index cdf03e0..9cb2c76 100644
+--- a/examples/gridphysics/firecaster.txt
++++ b/examples/gridphysics/firecaster.txt
+@@ -27,7 +27,7 @@ BasicGame
+         SpriteCounter stype=goal   limit=0 win=True
+ 
+     LevelMapping
+-        G > goal
++        g > goal
+         b > box
+         . > mana
+         A > avatar
+\ No newline at end of file
+diff --git a/examples/gridphysics/fireman.txt b/examples/gridphysics/fireman.txt
+index 0915651..d6b1749 100644
+--- a/examples/gridphysics/fireman.txt
++++ b/examples/gridphysics/fireman.txt
+@@ -14,10 +14,10 @@ BasicGame square_size=30
+             fireEnd > Immovable
+ 
+     LevelMapping
+-        B > box ground
++        b > box ground
+         A > avatar ground
+-        E > extinguisher ground
+-        F > fireOn ground
++        e > extinguisher ground
++        f > fireOn ground
+         . > ground
+ 
+ 
+diff --git a/examples/gridphysics/firestorms.txt b/examples/gridphysics/firestorms.txt
+index 5184fad..1c6bc06 100644
+--- a/examples/gridphysics/firestorms.txt
++++ b/examples/gridphysics/firestorms.txt
+@@ -23,4 +23,4 @@ BasicGame
+     LevelMapping
+         1 > escape
+         0 > seed
+-        H > water
+\ No newline at end of file
++        h > water
+\ No newline at end of file
+diff --git a/examples/gridphysics/freeway.txt b/examples/gridphysics/freeway.txt
+index 799ffe5..9edcccf 100644
+--- a/examples/gridphysics/freeway.txt
++++ b/examples/gridphysics/freeway.txt
+@@ -23,10 +23,10 @@ BasicGame
+         - > slowRtruck
+         x > fastRtruck
+         _ > slowLtruck
+-        X > fastLtruck
++        l > fastLtruck
+ 
+-        I > input
+-        S > start moving
++        i > input
++        s > start moving
+ 
+     InteractionSet
+ 
+diff --git a/examples/gridphysics/frogs.txt b/examples/gridphysics/frogs.txt
+index 1dff927..8187803 100644
+--- a/examples/gridphysics/frogs.txt
++++ b/examples/gridphysics/frogs.txt
+@@ -30,7 +30,7 @@ BasicGame
+         SpriteCounter stype=avatar limit=0 win=False
+     
+     LevelMapping
+-        G > goal
++        g > goal
+         0 > water
+         1 > forestDense water       # note how a single character can spawn multiple sprites
+         2 > forestDense wall log
+@@ -39,6 +39,6 @@ BasicGame
+         - > slowRtruck
+         x > fastRtruck
+         _ > slowLtruck
+-        X > fastLtruck
++        l > fastLtruck
+         = > log water
+         B > avatar log
+diff --git a/examples/gridphysics/gymkhana.txt b/examples/gridphysics/gymkhana.txt
+index dd158c0..0307ba7 100644
+--- a/examples/gridphysics/gymkhana.txt
++++ b/examples/gridphysics/gymkhana.txt
+@@ -20,7 +20,7 @@ BasicGame square_size=30 key_handler=Pulse
+             westfacing  > orientation=LEFT color=YELLOW img=honeyLeft
+ 
+         avatar >
+-            moving > MovingAvatar img=avatar
++            moving > OrientedAvatar img=avatar
+                 onground >
+                 onlog >
+             bullet > MissileAvatar img=alien
+@@ -38,9 +38,9 @@ BasicGame square_size=30 key_handler=Pulse
+         2 > northfacing
+         3 > westfacing
+ 
+-        R > forestR log
+-        L > forestL log
+-        G > goal
++        r > forestR log
++        l > forestL log
++        g > goal
+         A > onground
+ 
+     InteractionSet
+diff --git a/examples/gridphysics/hungrybirds.txt b/examples/gridphysics/hungrybirds.txt
+index 52cbf5a..90d289f 100644
+--- a/examples/gridphysics/hungrybirds.txt
++++ b/examples/gridphysics/hungrybirds.txt
+@@ -20,8 +20,7 @@ BasicGame
+         SpriteCounter stype=avatar limit=0 win=False
+ 
+     LevelMapping
+-        G > goal
++        g > goal
+         A > avatar food
+         f > foodbank food food food
+-        X > wall
+ 
+diff --git a/examples/gridphysics/iceandfire.txt b/examples/gridphysics/iceandfire.txt
+index 2584945..eb55c20 100644
+--- a/examples/gridphysics/iceandfire.txt
++++ b/examples/gridphysics/iceandfire.txt
+@@ -29,7 +29,7 @@ BasicGame
+         SpriteCounter stype=exit limit=0 win=True
+ 
+     LevelMapping
+-        X > exit
++        e > exit
+         t > trap
+         c > chip
+         i > iceshoes
+diff --git a/examples/gridphysics/infection.txt b/examples/gridphysics/infection.txt
+index d593f7b..b579699 100644
+--- a/examples/gridphysics/infection.txt
++++ b/examples/gridphysics/infection.txt
+@@ -28,6 +28,6 @@ BasicGame
+     LevelMapping
+         1 > doctor
+         0 > host
+-        X > virus
++        x > virus
+         A > normal
+-        E > entrance
+\ No newline at end of file
++        e > entrance
+\ No newline at end of file
+diff --git a/examples/gridphysics/intersection.txt b/examples/gridphysics/intersection.txt
+index fa473ff..b71f039 100644
+--- a/examples/gridphysics/intersection.txt
++++ b/examples/gridphysics/intersection.txt
+@@ -23,10 +23,10 @@ BasicGame
+         - > slowRcar
+         x > fastDcar
+         _ > slowRcar
+-        X > fastDcar
++        l > fastDcar
+ 
+-        I > input
+-        S > start avatar
++        i > input
++        s > start avatar
+ 
+     InteractionSet
+ 
+diff --git a/examples/gridphysics/islands.txt b/examples/gridphysics/islands.txt
+index 4ce6cf8..4fabb14 100644
+--- a/examples/gridphysics/islands.txt
++++ b/examples/gridphysics/islands.txt
+@@ -28,9 +28,9 @@ BasicGame
+         x > landSand
+         A > landSand avatar
+         b > bomb
+-        W > whirlpool
+-        T > landSand treasure
+-        G > goal
++        p > whirlpool
++        t > landSand treasure
++        g > goal
+ 
+     InteractionSet
+ 
+diff --git a/examples/gridphysics/labyrinth.txt b/examples/gridphysics/labyrinth.txt
+index b6ff326..a94eaee 100644
+--- a/examples/gridphysics/labyrinth.txt
++++ b/examples/gridphysics/labyrinth.txt
+@@ -16,5 +16,5 @@ BasicGame
+         SpriteCounter stype=exit limit=0 win=True
+ 
+     LevelMapping
+-        X > exit
++        x > exit
+         t > trap
+\ No newline at end of file
+diff --git a/examples/gridphysics/labyrinthdual.txt b/examples/gridphysics/labyrinthdual.txt
+index 5bda0ed..71fc29f 100644
+--- a/examples/gridphysics/labyrinthdual.txt
++++ b/examples/gridphysics/labyrinthdual.txt
+@@ -37,9 +37,9 @@ BasicGame key_handler=Pulse
+         SpriteCounter stype=exit limit=0 win=True
+ 
+     LevelMapping
+-        X > exit
++        x > exit
+         t > trap
+         r > redWall
+         b > blueWall
+-        R > redcoat
+-        B > bluecoat
+\ No newline at end of file
++        1 > redcoat
++        2 > bluecoat
+\ No newline at end of file
+diff --git a/examples/gridphysics/lasers.txt b/examples/gridphysics/lasers.txt
+index 7d9bafe..f80d727 100644
+--- a/examples/gridphysics/lasers.txt
++++ b/examples/gridphysics/lasers.txt
+@@ -19,12 +19,12 @@ BasicGame key_handler=Pulse
+ 
+     LevelMapping
+         A > avatar
+-        B > box
+-        L > lcleft
+-        R > lcright
+-        U > lcup
+-        D > lcdown
+-        G > goal
++        b > box
++        l > lcleft
++        r > lcright
++        u > lcup
++        d > lcdown
++        g > goal
+ 
+     InteractionSet
+ 
+diff --git a/examples/gridphysics/lasers2.txt b/examples/gridphysics/lasers2.txt
+index 20ad9d5..118de8f 100644
+--- a/examples/gridphysics/lasers2.txt
++++ b/examples/gridphysics/lasers2.txt
+@@ -26,17 +26,17 @@ BasicGame key_handler=Pulse
+ 
+     LevelMapping
+         A > avatar
+-        B > box
+-        L > lcleft
+-        R > lcright
+-        U > lcup
+-        D > lcdown
+-        G > goal
++        b > box
++        m > lcleft
++        s > lcright
++        t > lcup
++        e > lcdown
++        g > goal
+         u > mup
+         d > mdown
+         r > mright
+         l > mleft
+-        O > obstacle
++        o > obstacle
+ 
+     InteractionSet
+ 
+diff --git a/examples/gridphysics/lemmings.txt b/examples/gridphysics/lemmings.txt
+index e5cf255..2914c4d 100644
+--- a/examples/gridphysics/lemmings.txt
++++ b/examples/gridphysics/lemmings.txt
+@@ -11,8 +11,8 @@ BasicGame
+             lemming > Chaser stype=exit cooldown=5 color=RED img=alien.png shrinkfactor=0.75
+ 
+     LevelMapping
+-        X > exit
+-        E > entrance
++        x > exit
++        e > entrance
+         h > hole
+ 
+     TerminationSet
+diff --git a/examples/gridphysics/modality.txt b/examples/gridphysics/modality.txt
+index e9e18e2..0a869a3 100644
+--- a/examples/gridphysics/modality.txt
++++ b/examples/gridphysics/modality.txt
+@@ -17,12 +17,12 @@ BasicGame key_handler=Pulse  square_size=50
+         . > black
+         + > white
+         g > grey
+-        B > avatar black
++        b > avatar black
+         A > avatar white
+         * > crate black
+         @ > crate white
+         t > target black
+-        U > target white
++        u > target white
+ 
+     TerminationSet
+         SpriteCounter      stype=target               limit=0 win=True
+diff --git a/examples/gridphysics/overload.txt b/examples/gridphysics/overload.txt
+index aa591a0..14d97ee 100644
+--- a/examples/gridphysics/overload.txt
++++ b/examples/gridphysics/overload.txt
+@@ -25,8 +25,8 @@ BasicGame
+         SpriteCounter stype=avatar limit=0 win=False
+ 
+     LevelMapping
+-        G > goal
++        g > goal
+         . > marsh
+         0 > gold
+         1 > random
+-        S > weapon
+\ No newline at end of file
++        s > weapon
+\ No newline at end of file
+diff --git a/examples/gridphysics/pacman.txt b/examples/gridphysics/pacman.txt
+index 8fce7f1..264ace9 100644
+--- a/examples/gridphysics/pacman.txt
++++ b/examples/gridphysics/pacman.txt
+@@ -69,7 +69,7 @@ BasicGame square_size=20
+         2 > orangespawn
+         3 > bluespawn
+         4 > pinkspawn
+-        F > fruit
++        f > fruit
+         
+     TerminationSet
+         SpriteCounter stype=food   win=True     
+diff --git a/examples/gridphysics/plants.txt b/examples/gridphysics/plants.txt
+index 0a11f0b..0923e30 100644
+--- a/examples/gridphysics/plants.txt
++++ b/examples/gridphysics/plants.txt
+@@ -30,12 +30,12 @@ BasicGame
+         zombie wall  > stepBack
+ 
+     LevelMapping
+-        G > goal
++        g > goal
+         h > slowHell
+-        H > fastHell
+-        Z > zombie
++        f > fastHell
++        z > zombie
+         x > marsh
+-        T > tomb
++        t > tomb
+         A > avatar marsh
+ 
+     TerminationSet
+diff --git a/examples/gridphysics/plaqueattack.txt b/examples/gridphysics/plaqueattack.txt
+index 6f485d9..2a21209 100644
+--- a/examples/gridphysics/plaqueattack.txt
++++ b/examples/gridphysics/plaqueattack.txt
+@@ -23,10 +23,10 @@ BasicGame square_size=25
+ 
+   LevelMapping
+     h > hotdog
+-    H > hotdoghole
++    d > hotdoghole
+     b > burger
+-    B > burgerhole
+-    M > fullMolarSup
++    v > burgerhole
++    n > fullMolarSup
+     m > fullMolarInf
+ 
+   InteractionSet
+diff --git a/examples/gridphysics/portals.txt b/examples/gridphysics/portals.txt
+index f2bee32..a7427ae 100644
+--- a/examples/gridphysics/portals.txt
++++ b/examples/gridphysics/portals.txt
+@@ -31,8 +31,8 @@ BasicGame
+         v > vertical
+         x > sitting
+         r > random
+-        G > goal
++        g > goal
+         i > entry1
+-        I > entry2
++        2 > entry2
+         o > exit1
+-        O > exit2
+\ No newline at end of file
++        3 > exit2
+\ No newline at end of file
+diff --git a/examples/gridphysics/racebet.txt b/examples/gridphysics/racebet.txt
+index 58bf084..0d1bfb6 100644
+--- a/examples/gridphysics/racebet.txt
++++ b/examples/gridphysics/racebet.txt
+@@ -55,7 +55,7 @@ BasicGame
+         b > camelB
+         c > camelC
+         d > camelD
+-        G > goal
++        g > goal
+ 
+ 
+     TerminationSet
+diff --git a/examples/gridphysics/racebet2.txt b/examples/gridphysics/racebet2.txt
+index fa9bb5b..da713c7 100644
+--- a/examples/gridphysics/racebet2.txt
++++ b/examples/gridphysics/racebet2.txt
+@@ -57,8 +57,8 @@ BasicGame
+         b > camelB
+         c > camelC
+         d > camelD
+-        T > trap
+-        G > goal
++        t > trap
++        g > goal
+ 
+ 
+     TerminationSet
+diff --git a/examples/gridphysics/realportals.txt b/examples/gridphysics/realportals.txt
+index 236dbc3..aeb9579 100644
+--- a/examples/gridphysics/realportals.txt
++++ b/examples/gridphysics/realportals.txt
+@@ -26,14 +26,14 @@ BasicGame key_handler=Pulse
+ 
+ 
+     LevelMapping
+-        G > goal
++        g > goal
+         . > water
+         A > avatarIn weapon
+         t > weaponToggle1
+-        T > weaponToggle2
++        p > weaponToggle2
+         k > key
+         l > lock
+-        O > boulder
++        o > boulder
+ 
+     TerminationSet
+         SpriteCounter stype=goal   limit=0 win=True
+diff --git a/examples/gridphysics/realsokoban.txt b/examples/gridphysics/realsokoban.txt
+index b2147d5..2da1bd4 100644
+--- a/examples/gridphysics/realsokoban.txt
++++ b/examples/gridphysics/realsokoban.txt
+@@ -10,7 +10,7 @@ BasicGame key_handler=Pulse square_size=50
+ 
+     LevelMapping
+         A > avatar ground
+-        O > hole
++        o > hole
+         * > box ground
+         . > ground
+ 
+diff --git a/examples/gridphysics/rivers.txt b/examples/gridphysics/rivers.txt
+index 5aa97f9..61ab832 100644
+--- a/examples/gridphysics/rivers.txt
++++ b/examples/gridphysics/rivers.txt
+@@ -19,9 +19,9 @@ BasicGame square_size=30 key_handler=Pulse
+ 
+     LevelMapping
+         h > dryHouse ground
+-        W > waterOn
++        n > waterOn
+         A > avatar ground
+-        R > rock
++        r > rock
+         . > ground
+ 
+     InteractionSet
+diff --git a/examples/gridphysics/roguelike.txt b/examples/gridphysics/roguelike.txt
+index ef66ded..b23f4a8 100644
+--- a/examples/gridphysics/roguelike.txt
++++ b/examples/gridphysics/roguelike.txt
+@@ -26,6 +26,7 @@ BasicGame square_size=25
+ 
+         lock avatar > killIfOtherHasMore resource=key limit=1
+         moving wall lock > stepBack
++
+         exit avatar > killSprite scoreChange=10
+ 
+         avatar spider > subtractHealthPoints value=2
+@@ -42,11 +43,11 @@ BasicGame square_size=25
+         SpriteCounter stype=exit limit=0 win=True
+ 
+     LevelMapping
+-        X > exit
++        x > exit
+         s > weapon
+         g > gold
+-        S > spider
+-        P > phantom
++        r > spider
++        p > phantom
+         h > health
+         k > key
+         l > lock
+diff --git a/examples/gridphysics/seaquest.txt b/examples/gridphysics/seaquest.txt
+index 63a7380..84322f5 100644
+--- a/examples/gridphysics/seaquest.txt
++++ b/examples/gridphysics/seaquest.txt
+@@ -19,22 +19,20 @@ BasicGame
+                 pirana > Missile orientation=RIGHT speed=0.25 color=RED shrinkfactor=0.5 img=camel
+             diver > RandomNPC color=GREEN speed=0.5 img=ghost cons=2
+ 
+-        crew  > Resource color=GREEN limit=4 value=0 img=alien
++        crew  > Resource color=GREEN limit=4 img=alien
+ 
+     InteractionSet
+ 
+-        avatar TIME > subtractHealthPoints timer=24 repeating=True
++        avatar TIME > subtractHealthPoints timer=26 repeating=True
+ 
+         EOS avatar diver sky   > stepBack
+         fish EOS  > killSprite #Note that from vgdl 2.0, EOS can be the first or the second sprite.
+ 
+         fish torpedo > killBoth scoreChange=1
+         avatar fish  > killSprite
+-        crew avatar > collectResource
+ 
+         avatar sky > addHealthPoints value=1
+-        avatar sky > spawnIfHasMore resource=crew stype=saved limit=4
+-        avatar sky > changeResource resource=crew value=-4
++        avatar sky > spawnIfHasMore resource=crew stype=saved limit=4 spend=4
+         saved  sky > killSprite scoreChange=1000
+ 
+         avatar diver > changeResource resource=crew
+@@ -42,7 +40,7 @@ BasicGame
+ 
+     LevelMapping
+         a > sky
+-        A > avatar crew
++        A > avatar
+         w > water
+         1 > sharkhole
+         2 > whalehole
+diff --git a/examples/gridphysics/sheriff.txt b/examples/gridphysics/sheriff.txt
+index 694b596..0d9298f 100644
+--- a/examples/gridphysics/sheriff.txt
++++ b/examples/gridphysics/sheriff.txt
+@@ -23,10 +23,10 @@ BasicGame
+ 
+     LevelMapping
+         0 > base
+-        U > surround bup
+-        D > surround bdown
+-        L > surround bleft
+-        R > surround bright
++        u > surround bup
++        d > surround bdown
++        l > surround bleft
++        r > surround bright
+         s > surround
+         A > avatar
+         1 > turnup
+diff --git a/examples/gridphysics/shipwreck.txt b/examples/gridphysics/shipwreck.txt
+index 9ee00e4..b94fe3d 100644
+--- a/examples/gridphysics/shipwreck.txt
++++ b/examples/gridphysics/shipwreck.txt
+@@ -37,7 +37,7 @@ BasicGame square_size=30
+         2 > portGems
+         3 > portDiamonds
+         w > whirlpool
+-        S > shipwreck goldhole gemshole diamondshole
++        s > shipwreck goldhole gemshole diamondshole
+ 
+     TerminationSet
+         SpriteCounter      stype=avatar               limit=0 win=False
+diff --git a/examples/gridphysics/superman.txt b/examples/gridphysics/superman.txt
+index 7a0da65..d6b3ab7 100644
+--- a/examples/gridphysics/superman.txt
++++ b/examples/gridphysics/superman.txt
+@@ -59,9 +59,9 @@ BasicGame
+         l > bleft
+         r > bright
+         c > standingcivilian
+-        R > portalRight
+-        L > portalLeft
+-        J > jail
++        p > portalRight
++        q > portalLeft
++        j > jail
+ 
+     TerminationSet
+         MultiSpriteCounter stype1=hurtcivilian limit=1 win=False
+diff --git a/examples/gridphysics/tercio.txt b/examples/gridphysics/tercio.txt
+index 14eec99..4dd54b3 100644
+--- a/examples/gridphysics/tercio.txt
++++ b/examples/gridphysics/tercio.txt
+@@ -32,8 +32,8 @@ BasicGame key_handler=Pulse  square_size=50
+         $ > crate blue
+ 
+         t > target black
+-        U > target white
+-        R > target blue
++        u > target white
++        r > target blue
+ 
+     TerminationSet
+         SpriteCounter      stype=target               limit=0 win=True
+diff --git a/examples/gridphysics/thecitadel.txt b/examples/gridphysics/thecitadel.txt
+index 77a5869..cbad75e 100644
+--- a/examples/gridphysics/thecitadel.txt
++++ b/examples/gridphysics/thecitadel.txt
+@@ -14,9 +14,9 @@ BasicGame square_size=40 key_handler=Pulse
+     LevelMapping
+         0 > roundhole
+         1 > squarehole
+-        B > boulder
+-        C > crate
+-        G > goal
++        b > boulder
++        c > crate
++        g > goal
+     InteractionSet
+ 
+ 
+diff --git a/examples/gridphysics/thesnowman.txt b/examples/gridphysics/thesnowman.txt
+index 125724f..5c53cfa 100644
+--- a/examples/gridphysics/thesnowman.txt
++++ b/examples/gridphysics/thesnowman.txt
+@@ -22,7 +22,7 @@ BasicGame
+ 
+ 
+     LevelMapping
+-        B > base
++        s > base
+         b > body
+         c > chest
+         h > head
+diff --git a/examples/gridphysics/waitforbreakfast.txt b/examples/gridphysics/waitforbreakfast.txt
+index 9658b31..a532d97 100644
+--- a/examples/gridphysics/waitforbreakfast.txt
++++ b/examples/gridphysics/waitforbreakfast.txt
+@@ -21,12 +21,12 @@ BasicGame
+ 
+   LevelMapping
+     . > ground
+-    T > emptytable
+-    K > kitchen
+-    C > chair
++    t > emptytable
++    k > kitchen
++    r > chair
+     c > singlechair
+-    E > exit
+-    O > othertable
++    e > exit
++    o > othertable
+     A > standingavatar ground
+ 
+   InteractionSet
+diff --git a/examples/gridphysics/witnessprotection.txt b/examples/gridphysics/witnessprotection.txt
+index 7722a04..64bce47 100644
+--- a/examples/gridphysics/witnessprotection.txt
++++ b/examples/gridphysics/witnessprotection.txt
+@@ -28,15 +28,15 @@ BasicGame
+         0 > base
+         l > bleftd
+         r > brightd
+-        L > bleftu
+-        R > brightu
++        . > bleftu
++        , > brightu
+         A > avatar
+         1 > turnup
+         2 > turnleft
+         3 > turndown
+         4 > turnright
+-        W > running
+-        E > emptyExit
++        n > running
++        e > emptyExit
+ 
+     TerminationSet
+         SpriteCounter      stype=avatar           limit=0 win=False
+diff --git a/examples/gridphysics/zelda.txt b/examples/gridphysics/zelda.txt
+index cbd1b6b..a96770e 100644
+--- a/examples/gridphysics/zelda.txt
++++ b/examples/gridphysics/zelda.txt
+@@ -13,7 +13,7 @@ BasicGame
+         monsterSlow > RandomNPC cooldown=8
+ 
+   LevelMapping
+-    G > goal
++    g > goal
+     + > key        
+     A > nokey
+     1 > monsterQuick
+diff --git a/examples/gridphysics/zenpuzzle.txt b/examples/gridphysics/zenpuzzle.txt
+index 8db70b0..2726ce0 100644
+--- a/examples/gridphysics/zenpuzzle.txt
++++ b/examples/gridphysics/zenpuzzle.txt
+@@ -10,7 +10,7 @@ BasicGame key_handler=Pulse
+         
+     
+     LevelMapping
+-        R > rock
++        r > rock
+         . > ground
+         
+     TerminationSet

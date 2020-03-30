@@ -1,0 +1,7 @@
+wwwwwwwwwwwww
+wA          w
+w  3  2  1  h
+w  4  4     w
+w  1  2  3  h
+wB          w
+wwwwwwwwwwwww

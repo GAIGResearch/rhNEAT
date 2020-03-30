@@ -1,0 +1,110 @@
+BasicGame no_players=2
+  SpriteSet
+    floor > Immovable img=world_NES_sliced/58 hidden=True
+    floor2 > Immovable img=world_NES_sliced/2  hidden=True
+    goal  > Door color=GREEN img=world_NES_sliced/0
+
+    movable >
+      avatar > ShootAvatar ammo=pickaxe speed=0.5 frameRate=1.25 orientation=DOWN
+        avatarA > stype=proA orientedImg=Link_NES_sliced/link
+        avatarB > stype=proB orientedImg=Link_NES_sliced/blueLink
+      enemy > RandomNPC cooldown=3 cons=15 img=oryx/bat1 speed=0.2
+      tank > Missile speed=0.05
+        tankR > img=newset/tank_blueR orientation=RIGHT
+        tankU > img=newset/tank_blue orientation=UP
+        tankL > img=newset/tank_blueL orientation=LEFT
+        tankD > img=newset/tank_blueD orientation=DOWN
+
+    #Tick counter
+    #Quiescent tick counter
+    pcq > Immovable invisible=true hidden=true
+        pcqA >
+        pcqB >
+    #Active tick counter
+    pca > SpawnPoint stype=pc invisible=true hidden=true
+        pcaA > stype=pcA
+        pcaB > stype=pcB
+    #Tick count
+    pc > Immovable invisible=true hidden=true
+        pcA >
+        pcB >
+    #Termination state
+    dead > Immovable invisible=true hidden=true
+
+    paspawn > SpawnPoint stype=pam prob=0.1 cooldown=50 invisible=true
+    pam > SpawnPoint stype=pickaxe prob=1 total=1 invisible=true
+    pickaxe > Resource value=1 limit=1 img=oryx/pickaxe
+
+    wall > Immovable img=world_NES_sliced/wall1 autotiling=false
+    pro > Missile speed=1 img=oryx/pickaxe
+        proA > singleton=true
+        proB > singleton=true
+
+    win > Immovable invisible=true
+        winA >
+        winB >
+
+  LevelMapping
+    g > floor goal
+    A > floor avatarA pcqA
+    B > floor avatarB pcqB
+    e > floor enemy
+    . > floor
+    * > floor2
+    w > floor wall
+    r > floor tankR
+    u > floor tankU
+    l > floor tankL
+    d > floor tankD
+    p > floor pickaxe paspawn
+
+  InteractionSet
+    #if a pickaxe would respawn on a tile that already has one, prevent it
+    pam pickaxe > killSprite
+
+    pro wall > stepBack
+    pro wall > reverseDirection
+
+    tank pro > bounceForward
+    pro tank > transformTo stype=pickaxe
+
+    pickaxe avatarA > collectResource scoreChange=1,0
+    pickaxe avatarB > collectResource scoreChange=0,1
+    pickaxe avatar > killSprite
+    wall avatar > killIfOtherHasMore resource=pickaxe limit=1 subtract=true
+
+    pro EOS > wrapAround
+
+    pro enemy > transformTo stype=pickaxe
+    enemy pro > killSprite
+
+    wall tank > killSprite
+    movable wall > stepBack
+    movable EOS > wrapAround
+    goal avatarA > transformTo stype=winA
+    goal avatarB > transformTo stype=winB
+    enemy enemy > stepBack
+    avatar enemy tank > killSprite scoreChange=-1
+
+    #pickaxe flight timer
+    pcqA floor > transformIfCount stype=pcaA stypeCount=proA geq=1
+    pcaA floor > transformIfCount stype=pcqA stypeCount=pcA geq=2
+    proA floor > transformIfCount stype=pickaxe stypeCount=pcA geq=2
+    pcA floor > transformIfCount stype=dead stypeCount=pcA geq=2
+    pcqB floor > transformIfCount stype=pcaB stypeCount=proB geq=1
+    pcaB floor > transformIfCount stype=pcqB stypeCount=pcB geq=2
+    proB floor > transformIfCount stype=pickaxe stypeCount=pcB geq=2
+    pcB floor > transformIfCount stype=dead stypeCount=pcB geq=2
+
+    pcaA floor > transformIfCount stype=pcqA stypeCount=proA leq=0
+    pcA floor > transformIfCount stype=dead stypeCount=proA leq=0
+    pcaB floor > transformIfCount stype=pcqB stypeCount=proB leq=0
+    pcB floor > transformIfCount stype=dead stypeCount=proB leq=0
+
+    dead floor > killSprite
+
+  TerminationSet
+    SpriteCounterMore stype=winA limit=1  win=True,False
+    SpriteCounterMore stype=winB limit=1  win=False,True
+    SpriteCounter stype=avatarA limit=0  win=False,True
+    SpriteCounter stype=avatarB limit=0  win=True,False

@@ -1,0 +1,10 @@
+BasicGame no_players=2
+    SpriteSet
+        avatar > MovingAvatar
+    LevelMapping
+        A > avatar
+        B > avatar
+    InteractionSet
+
+    TerminationSet
+        Timeout limit=5 win=False,False

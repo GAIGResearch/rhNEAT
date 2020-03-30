@@ -1,0 +1,61 @@
+GameSpace key_handler=PULSE square_size=60 no_players=2
+    SpriteSet
+        ground > Immovable img=oryx/grass autotiling=True hidden=True
+        doors >
+                    exit > Door color=GREEN img=oryx/doorclosed1
+                    exitOpen > Door color=GREEN img=oryx/doorOpen1
+        moving >
+            avatar >
+                player1 > ShootAvatar stype=missile1 speed=1.0 img=newset/humanShotgun healthPoints=5 limitHealthPoints=10
+                player2 > ShootAvatar stype=missile2 speed=1.0 img=newset/shooter1 healthPoints=5 limitHealthPoints=10
+        missile >
+            missile1 > Missile img=oryx/orb1 shrinkfactor=0.4 timeToLive=10 speed=0.25
+            missile2 > Missile img=oryx/orb1 shrinkfactor=0.4 timeToLive=10 speed=0.25
+        wall > Immovable img=oryx/wall1
+
+        resources >
+            treasure > Resource color=RED img=oryx/diamond3 limit=5
+
+        hpboost > Immovable color=GREEN img=oryx/heart1
+
+    LevelMapping
+            . > ground
+            A > player1 ground
+            B > player2 ground
+            T > treasure ground
+            P > hpboost ground
+            w > wall ground
+            X > exit ground
+
+    InteractionSet
+        avatar wall > stepBack pixelPerfect=True
+        player1 player2 > stepBack pixelPerfect=True
+        player2 player1 > stepBack pixelPerfect=True
+
+        player1 missile2 > subtractHealthPoints value=1
+        player2 missile1 > subtractHealthPoints value=1
+
+        missile1 wall > killSprite scoreChange=-1,0
+        missile2 wall > killSprite scoreChange=0,-1
+
+        #missile wall > killSprite
+        missile1 player2 > killSprite scoreChange=2,-2
+        missile2 player1 > killSprite scoreChange=-2,2
+
+        #avatar treasure > addHealthPoints value=1
+        treasure player1 > collectResource scoreChange=5,0
+        treasure player2 > collectResource scoreChange=0,5
+
+        avatar hpboost > addHealthPoints value=1
+        hpboost player1 > killSprite scoreChange=5,0
+        hpboost player2 > killSprite scoreChange=0,5
+
+        exit player1 > killIfOtherHasMore resource=treasure limit=5 scoreChange=1000,0
+        exit player2 > killIfOtherHasMore resource=treasure limit=5 scoreChange=0,1000
+        #exitOpen player1 > killSprite scoreChange=1000,0
+        #exitOpen player2 > killSprite scoreChange=0,1000
+
+    TerminationSet
+        SpriteCounter      stype=player1                limit=0 win=False,True
+        SpriteCounter      stype=player2                limit=0 win=True,False
+        MultiSpriteCounter stype1=exit stype2=exitOpen  limit=0 count_score=True

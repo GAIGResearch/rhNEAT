@@ -1,0 +1,19 @@
+BasicGame square_size=32
+    SpriteSet
+        avatar  > HorizontalAvatar img=oryx/spaceship1
+        goal > Door img=newset/exit2
+        death > Door img=oryx/spike2
+    
+    LevelMapping
+        0 > death
+        1 > goal
+        A > avatar
+
+    TerminationSet
+        SpriteCounter stype=avatar limit=0 win=False
+        SpriteCounter stype=goal limit=0 win=True
+        
+    InteractionSet
+        avatar  EOS  > stepBack
+        goal avatar > killSprite
+        avatar death > killSprite

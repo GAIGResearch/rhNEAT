@@ -1,0 +1,53 @@
+BasicGame no_players=2
+    SpriteSet
+        block > Passive
+            block1 > img=newset/block1
+            block2 > img=newset/block2
+            block3 > img=newset/block3
+            block4 > img=newset/block4
+            block5 > img=newset/block5
+        avatar > MovingAvatar img=oryx/knight1.png
+            avatarA >
+            avatarB >
+        hole > Immovable color=DARKBLUE img=oryx/cspell4
+            hole1 >
+            hole2 >
+            hole3 >
+            hole4 >
+            hole5 >
+        wall > Immovable img=oryx/wall3 autotiling=True
+    InteractionSet
+        avatar wall > stepBack
+        block avatar > bounceForward
+        block wall block > undoAll
+        avatar hole > stepBack
+
+        hole1 block2 block3 block4 block5 > killAll stype=avatarA
+        hole2 block1 block3 block4 block5 > killAll stype=avatarA
+        hole3 block1 block2 block4 block5 > killAll stype=avatarA
+        hole4 block1 block2 block3 block5 > killAll stype=avatarA
+        hole5 block1 block2 block3 block4 > killAll stype=avatarA
+
+        hole1 block1 > transformTo stype=hole2 scoreChange=1,1
+        block1 hole2 > killSprite
+        hole2 block2 > transformTo stype=hole3 scoreChange=2,2
+        block2 hole3 > killSprite
+        hole3 block3 > transformTo stype=hole4 scoreChange=3,3
+        block3 hole4 > killSprite
+        hole4 block4 > transformTo stype=hole5 scoreChange=4,4
+        block4 hole5 > killSprite
+        block5 hole5 > killSprite
+
+    TerminationSet
+        SpriteCounter stype=block limit=0 win=True,True
+        SpriteCounter stype=avatar limit=1 win=False,False
+
+    LevelMapping
+        h > hole1
+        1 > block1
+        2 > block2
+        3 > block3
+        4 > block4
+        w > wall
+        A > avatarA
+        B > avatarB

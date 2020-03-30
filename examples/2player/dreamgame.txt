@@ -1,0 +1,57 @@
+BasicGame no_players=2
+    SpriteSet
+        floor > Immovable hidden=True img=oryx/floor3
+        door > Door color=GREEN img=newset/lock1
+            doorA >
+            doorB >
+
+        sword > Flicker limit=5 singleton=True img=oryx/sword4 shrinkfactor=0.8
+        weapon > Resource color=BLUE value=10000 limit=10000 img=oryx/sword4 shrinkfactor=0.8
+        health > Resource img=oryx/heart1 shrinkfactor=0.8 limit=10
+
+
+        key > Resource img=oryx/key2 limit=1 shrinkfactor=0.7
+
+        transaction > Immovable invisible=True
+
+        moving >
+            avatar > ShootAvatar ammo=weapon stype=sword frameRate=8 healthPoints=1 limitHealthPoints=10
+                avatar1 > img=oryx/swordman1
+                avatar2 > img=oryx/swordman1
+            spider > RandomNPC speed=1 cooldown=4 img=oryx/spider2 cons=3
+            phantom > Chaser stype=avatar cooldown=6 speed=0.5 color=BROWN  img=oryx/ghost2
+
+        wall > Immovable img=oryx/wall3 autotiling=True
+
+    InteractionSet
+        weapon avatar   > collectResource scoreChange=2
+        key avatar      > collectResource
+
+        doorA avatar1 > killIfOtherHasMore resource=key limit=1 scoreChange=10,0
+        doorB avatar2 > killIfOtherHasMore resource=key limit=1 scoreChange=0,10
+        moving wall door > stepBack pixelPerfect=True
+
+        avatar spider > subtractHealthPoints value=2
+        spider sword > killSprite scoreChange=2,2
+
+        avatar phantom > subtractHealthPoints value=1
+        phantom sword > killSprite scoreChange=1,1
+
+        avatar health  > killSprite scoreChange=100,100
+
+    TerminationSet
+        SpriteCounter stype=avatar1 limit=0 win=False,True
+        SpriteCounter stype=avatar2 limit=0 win=True,False
+        SpriteCounter stype=doorA  limit=0 win=True,False
+        SpriteCounter stype=doorB  limit=0 win=False,True
+
+    LevelMapping
+        d > doorA doorB floor
+        s > weapon floor
+        r > spider floor
+        p > phantom floor
+        h > health floor
+        k > key floor
+        A > avatar1 floor
+        B > avatar2 floor
+        . > floor
